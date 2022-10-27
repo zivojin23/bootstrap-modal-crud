@@ -2,7 +2,8 @@
 
 namespace App\Http\Livewire;
 
-// use Livewire\WithFileUploads;
+
+use Livewire\WithFileUploads;
 use Livewire\Component;
 use App\Models\Project;
 use Livewire\WithPagination;
@@ -11,7 +12,7 @@ use Livewire\WithPagination;
 class Form extends Component
 {
 
-    // use WithFileUploads;
+    use WithFileUploads;
     use WithPagination;
 
     // public $projects;
@@ -19,11 +20,12 @@ class Form extends Component
     public $first_name;
     public $last_name;
     public $email;
-    // public $project_name;
-    // public $project_priority = '';
-    // public $project_status = '';
-    // public $project_person;
-    // public $attachment;
+    public $project_name;
+    public $project_priority = '';
+    public $project_status = '';
+    public $project_person;
+    public $attachment;
+
     public $search = '';
 
     public $user_id;
@@ -72,9 +74,9 @@ class Form extends Component
         $project = Project::find($project_id);
         if($project){
             $this->project_id = $project->id;
-            $this->first_name = $project->first_name;
-            $this->last_name = $project->last_name;
-            $this->email = $project->email;
+            $this->project_priority = $form->project_priority;
+            $this->project_status   = $form->project_status;
+            $this->project_person   = $form->project_person;
         }else{
             return redirect()->to('/form');
         }

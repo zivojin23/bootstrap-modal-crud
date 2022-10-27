@@ -15,12 +15,16 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            // $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email');
-
-            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('project_name');
+            $table->string('project_priority');
+            $table->string('project_status');
+            $table->string('project_person');
+            $table->string('attachment');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -33,7 +33,7 @@
                             
                             @error('email')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
-{{-- 
+
                         <div class="flex flex-col w-4/5 mx-auto my-8">
         
                             <label for="project_name" class="mb-2 mt-10 text-sm font-medium">Project Name</label>
@@ -72,7 +72,7 @@
                             <input wire:model="attachment" id="attachment" type="file" class="form-control">
                             
                             @error('attachment')<span class="text-red-600">{{ $message }}</span>@enderror
-                        </div> --}}
+                        </div>
 
 
                     
@@ -100,7 +100,7 @@
                 <form wire:submit.prevent="updateProject">
                     <div class="modal-body">
                     
-                        <div class="flex flex-col w-4/5 mx-auto my-8">
+                        {{-- <div class="flex flex-col w-4/5 mx-auto my-8">
         
                             <label for="first_name" class="mb-2 mt-10 text-sm font-medium">First Name</label>
                             <input wire:model="first_name" id="first_name" type="text" placeholder="Your First Name" class="form-control">
@@ -122,8 +122,8 @@
                             <input wire:model="email"  id="email" type="email" placeholder="Your Email" class="form-control">
                             
                             @error('email')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
-{{-- 
+                        </div> --}}
+
 
 
                         <div class="flex flex-col w-4/5 mx-auto my-8">
@@ -151,7 +151,7 @@
                         </div>
 
                       
---}}
+
 
 
                     
